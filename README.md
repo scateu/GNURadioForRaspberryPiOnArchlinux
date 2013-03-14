@@ -46,10 +46,15 @@ If you don't add swap partition for raspberry pi, errors like "unexpected }" wil
     free -h
         
 ### Compile for long long time
+
     pacman -S file base-devel abs
     pacman -S yaourt
     yaourt -Syy
     yaourt -S gnuradio
+
+Tips:
+
+> You need to add arch "armv6h" to PKGBUILD file
 
 or
     makepkg --asroot -Acs libuhd
@@ -66,6 +71,41 @@ Provide `libuhd-3.5.1-2-armv6h.pkg.tar.xz` for raspberry pi (archlinuxarm)
 
 ### GNURadio
 
+        -- ######################################################
+        -- # Gnuradio enabled components
+        -- ######################################################
+        --   * python-support
+        --   * testing-support
+        --   * volk
+        --   * gruel
+        --   * gnuradio-core
+        --   * gr-fft
+        --   * gr-filter
+        --   * gr-atsc
+        --   * gr-audio
+        --   * gr-analog
+        --   * gr-digital
+        --   * gr-noaa
+        --   * gr-pager
+        --   * gr-trellis
+        --   * gr-uhd
+        --   * gr-utils
+        --   * gr-vocoder
+        --   * gr-fcd
+        --   * gr-wavelet
+        --   * gr-blocks
+        --
+        -- ######################################################
+        -- # Gnuradio disabled components
+        -- ######################################################
+        --   * doxygen
+        --   * sphinx
+        --   * gnuradio-companion
+        --   * gr-comedi
+        --   * gr-qtgui
+        --   * gr-shd
+        --   * gr-video-sdl
+        --   * gr-wxgui
 
 
 
