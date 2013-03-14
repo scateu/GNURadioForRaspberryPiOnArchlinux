@@ -1,11 +1,11 @@
-GNURadio prebuilt packages for Raspberry Pi on Archlinux
+GNURadio prebuilt packages for Raspberry Pi on Archlinux armv6h
 ========================================================
 
 Intro
 -----
 scateu@gmail.com
 
-To install GNURadio on Raspberry Pi(archlinuxarm), you just need to 
+To install GNURadio on Raspberry Pi(archlinux armv6h), you just need to 
 
     yaourt -S gnuradio
 
@@ -54,9 +54,10 @@ If you don't add swap partition for raspberry pi, errors like "unexpected }" wil
 
 Tips:
 
-> You need to add arch "armv6h" to PKGBUILD file
+You need to add arch "armv6h" to PKGBUILD file
 
 or
+
     makepkg --asroot -Acs libuhd
     makepkg --asroot -Acs gnuradio
 
