@@ -133,3 +133,22 @@ so I change the `build()` function within PKGBUILD file like this:
                
 
 seems work fine.
+
+### rtl-sdr
+
+just 
+
+    pacman -S rtl-sdr
+
+their relationship:
+
+        libuhd
+          |
+        gnuradio      	rtl-sdr
+          |                |
+           --- gr-osmosdr--
+                   |
+                   |
+               gr-air-modes
+	
+
