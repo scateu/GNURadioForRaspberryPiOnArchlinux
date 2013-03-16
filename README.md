@@ -137,11 +137,25 @@ seems work fine.
 
 ### rtl-sdr
 
-just 
+have prebuilt package in pacman , just 
 
     pacman -S rtl-sdr
 
-their relationship:
+### gr-osmosdr-git
+    
+    yaourt -G gr-osmosdr-git
+
+then change PKGBUILD file , add `armv6h` arch    
+
+    arch=('i686' 'x86_64' 'armv6h')
+
+then makepkg
+
+    makepkg -As --asroot
+
+### gr-air-modes
+
+### their relationship map:
 
         libuhd
           |
