@@ -161,6 +161,7 @@ then makepkg
 
 ### gr-air-modes
 
+    pacman -S python2-numpy python2-scipy
     yaourt -G gr-air-modes-git
 
 then change PKGBUILD file, add `armv6h` arch, and change depends `python` to `python2` so that you needn't to install python3
@@ -168,7 +169,14 @@ then change PKGBUILD file, add `armv6h` arch, and change depends `python` to `py
     arch=('i686' 'x86_64' 'armv6h')
     depends=('gnuradio' 'python2' 'gr-osmosdr-git' 'libuhd' 'sqlite' 'cmake')
 
+comment out this line in file `/usr/lib/python2.7/site-packages/air_modes/__init__.py` in order not to import PyQt4 in poor RPi.
+    
+    from az_map import *
 
+then enjoy :D
+
+    modes_rx --gain=60 --output-all --rtlsdr --kml=xxx.kml
+    
 
 ### their relationship map:
 
@@ -182,3 +190,12 @@ then change PKGBUILD file, add `armv6h` arch, and change depends `python` to `py
                gr-air-modes
 	
 
+
+### gpsd
+
+    pacman -S gbluez gpsd 
+
+    chmod 666 /dev/ttyUSB0 # or gpsd will complain: gpsd:ERROR: /dev/ttyUSB0: device activation failed.
+
+    gpsd -N -D5 /dev/ttyUSB0
+    cgps
