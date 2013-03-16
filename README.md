@@ -72,6 +72,8 @@ Provide `libuhd-3.5.1-2-armv6h.pkg.tar.xz` for raspberry pi (archlinuxarm)
 
 ### GNURadio
 
+Compiling for about 48hours.
+
         -- ######################################################
         -- # Gnuradio enabled components
         -- ######################################################
@@ -131,7 +133,6 @@ so I change the `build()` function within PKGBUILD file like this:
 
         cmake -DPYTHON_EXECUTABLE=$(which python2) -DPYTHON_INCLUDE_DIR=$(echo /usr/include/python2*) DPYTHON_LIBRARY=$(echo /usr/lib/libpython2.*.so) -DCMAKE_INSTALL_PREFIX=/usr -Dhave_mfpu_neon=0 -DCMAKE_CXX_FLAGS:STRING="-march=armv6 -mfpu=vfp -mfloat-abi=hard" -DCMAKE_C_FLAGS:STRING="-march=armv6 -mfpu=vfp -mfloat-abi=hard" ../
                
-
 seems work fine.
 
 ### rtl-sdr
