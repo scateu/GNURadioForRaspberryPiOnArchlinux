@@ -17,7 +17,9 @@ So I give my prebuilt packages.
 
 How to compile
 --------------
-To compile all packages by yourself on your raspberry pi, 
+There are two methods. One is [cross-compile](http://archlinuxarm.org/developers/distcc-cross-compiling)(thanks to dheidler@gmail.com) , the other is compiling on rpi directly. Herein, we give the direct compiling details.
+
+To compile all packages by yourself on your raspberry pi :
 
 ### Resize your raspberry pi to full SD card
 	
@@ -69,6 +71,10 @@ or
 Provide `libuhd-3.5.1-2-armv6h.pkg.tar.xz` for raspberry pi (archlinuxarm)
 
 	pacman -U libuhd-3.5.1-2-armv6h.pkg.tar.xz 
+
+Thanks to dheidler@gmail.com. He provided a newer version `libuhd-3.5.2-1-armv6h.pkg.tar.xz` for raspberry pi (archlinuxarm)
+
+   
 
 ### GNURadio
 
